@@ -1,0 +1,56 @@
+<div id="divCallCtrl" class="span4 well" style='display:table-cell; vertical-align:middle'>
+    <label style="width: 100%;" align="center" id="txtCallStatus">
+    </label>
+    <h2>
+        Call Center [<!--username--> ] <img id="callee-<!--username-->" class="sip-callee disabled" src="<!--icon-->"
+                                            width="128"/>
+    </h2>
+    <label style="width: 100%;" align="center" id="txtRegStatus"></label>
+    <input type="button" class="btn btn-success" id="btnRegister" value="LogIn" disabled
+           onclick='sipRegister("<!--username-->", "<!--password-->");'/>
+    <input type="button" class="btn btn-danger" id="btnUnRegister" value="LogOut" disabled onclick='sipUnRegister();'/>
+    <br/>
+    <table id="call-actions-table" style='display: none;width: 100%;'>
+        <tr style="display: none">
+            <td style="white-space:nowrap;">
+                <input type="text" style="width: 100%; height:100%;" id="txtPhoneNumber" value="w1004"
+                       placeholder="Enter phone number to call"/>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <div class="btn-toolbar" style="margin: 0; vertical-align:middle">
+                    <div id="divBtnCallGroup" class="btn-group">
+                        <button id="btnCall" disabled class="btn btn-primary" data-toggle="dropdown">Call</button>
+                    </div>&nbsp;&nbsp;
+                    <div class="btn-group">
+                        <input type="button" id="btnHangUp" style="margin: 0; vertical-align:middle; height: 100%;"
+                               class="btn btn-primary" value="HangUp" onclick='sipHangUp();' disabled/>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td align='center'>
+                <div id='divCallOptions' class='call-options' style='opacity: 0; margin-top: 0px'>
+                    <input type="button" class="btn" style="" id="btnMute" value="Mute" onclick='sipToggleMute();'/>
+                    &nbsp;
+                    <input type="button" class="btn" style="" id="btnHoldResume" value="Hold"
+                           onclick='sipToggleHoldResume();'/> &nbsp;
+                    <input type="button" class="btn" style="" id="btnTransfer" value="Transfer"
+                           onclick='sipTransfer();'/> &nbsp;
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+<!-- /container -->
+<!-- Glass Panel -->
+<div id='divGlassPanel' class='glass-panel' style='visibility:hidden'></div>
+<!-- KeyPad Div -->
+
+<!-- Audios -->
+<audio id="audio_remote" autoplay="autoplay"></audio>
+<audio id="ringtone" loop src="<!--pluginPath-->/sounds/ringtone.wav"></audio>
+<audio id="ringbacktone" loop src="<!--pluginPath-->/sounds/ringbacktone.wav"></audio>
+<audio id="dtmfTone" src="<!--pluginPath-->/sounds/dtmf.wav"></audio>
